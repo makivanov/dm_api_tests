@@ -1,7 +1,7 @@
 import json
 
 def test_post_v1_account(account_api, login_api, mailhog_api):
-    login = 'miv_test9'
+    login = 'miv_test11'
     password = '12345678'
     email = f'{login}@mail.ru'
 
