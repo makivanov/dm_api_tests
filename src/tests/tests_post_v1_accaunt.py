@@ -1,18 +1,9 @@
 import json
 
-from apps.dm_api_account.api.account_api import AccountApi
-from apps.dm_api_account.api.login_api import LoginApi
-from apps.api_mailhog.api.mailhog_api import MailhogApi
-
-
-def test_post_v1_account(base_api_url, mail_url):
-    login = 'miv_test6'
+def test_post_v1_account(account_api, login_api, mailhog_api):
+    login = 'miv_test8'
     password = '12345678'
     email = f'{login}@mail.ru'
-
-    account_api = AccountApi(host=base_api_url)
-    login_api = LoginApi(host=base_api_url)
-    mailhog_api = MailhogApi(host=mail_url)
 
     # Регистрация пользователя
     json_data = {
