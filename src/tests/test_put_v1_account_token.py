@@ -1,13 +1,11 @@
 from helpers.get_activation_token import get_email_info
-
 # - Регистрируемся
 # - Получаем активационный токен
 # - Активируем
-# - Заходим
+# - Авторизация
 
-
-def test_post_v1_account(account_api, login_api, mailhog_api):
-    login = 'miv_test30'
+def test_put_v1_account_token(mailhog_api, account_api, login_api):
+    login = 'miv_test27'
     password = '12345678'
     email = f'{login}@mail.ru'
 
@@ -41,7 +39,3 @@ def test_post_v1_account(account_api, login_api, mailhog_api):
 
     response = login_api.post_v1_account_login(json_data=json_data)
     assert response.status_code == 200, f'Пользователь {login} не смог авторизоваться'
-
-
-
-
