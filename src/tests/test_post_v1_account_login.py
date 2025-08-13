@@ -15,7 +15,7 @@ structlog.configure(
 )
 
 def test_post_v1_account_login(account_api, mailhog_api, login_api):
-    login = 'miv_test35'
+    login = 'miv_test41'
     password = '12345678'
     email = f'{login}@mail.ru'
     change_email = f'{login}_change@mail.ru'

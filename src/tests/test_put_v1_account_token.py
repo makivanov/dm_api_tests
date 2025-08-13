@@ -5,7 +5,7 @@ from helpers.get_activation_token import get_email_info
 # - Авторизация
 
 def test_put_v1_account_token(mailhog_api, account_api, login_api):
-    login = 'miv_test27'
+    login = 'miv_test43'
     password = '12345678'
     email = f'{login}@mail.ru'
 
