@@ -1,12 +1,21 @@
+from xml.etree.ElementTree import indent
+
 from helpers.get_activation_token import get_email_info
+import structlog
 
 # - Регистрируемся
 # - Получаем активационный токен
 # - Активируем
 # - Заходим
 
+structlog.configure(
+    processors=[
+        structlog.processors.JSONRenderer(indent=4, ensure_ascii=True, sort_keys=True)
+    ]
+)
+
 def test_post_v1_account_login(account_api, mailhog_api, login_api):
-    login = 'miv_test28'
+    login = 'miv_test35'
     password = '12345678'
     email = f'{login}@mail.ru'
     change_email = f'{login}_change@mail.ru'
